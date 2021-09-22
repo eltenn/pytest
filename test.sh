@@ -1,6 +1,12 @@
-if (cat res.txt | grep "error") != 0
-	then exit 1
+#!/bin/bash
+
+var=$(cat res.txt | grep "error")
+echo $var
+if  [[ $var != "" ]]; then
+	echo "test failed"
+	exit 1
 else
-	then exit 0
+	echo "test succed"
+	exit 0
 fi
 
